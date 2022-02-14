@@ -1,0 +1,14 @@
+NAME
+  vtkFilter1
+DESCRIPTION
+  "This module is a dummy example"
+DEPENDS
+  VTK::CommonCore
+  VTK::CommonDataModel
+  VTK::CommonExecutionModel
+  VTK::FiltersCore
+TEST_DEPENDS
+  VTK::CommonSystem
+  VTK::IOXML
+  VTK::TestingCore
+
