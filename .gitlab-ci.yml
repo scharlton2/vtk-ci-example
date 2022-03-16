@@ -1,4 +1,4 @@
-image: $CI_REGISTRY/khaled.hadj-tahar/vtk-builder/vtk:v9.1.0
+image: $CI_REGISTRY/visualization/vtk-image-builder/vtk:v9.1.0
 stages:
   - build
   - test
@@ -10,7 +10,7 @@ build-plugin:
     - cd build
     - cmake -DVTK_DIR=/vtk/build/ -DBUILD_TESTING=ON ..
     - cmake --build . --config Release --parallel 2
-  tags:  
+  tags:
     - docker
     - linux
     - shared
@@ -27,7 +27,7 @@ test-plugin:
   script:
     - cd build
     - ctest
-  tags: 
+  tags:
     - docker
     - linux
     - shared
