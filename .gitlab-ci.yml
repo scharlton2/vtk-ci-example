@@ -1,9 +1,9 @@
-image: $CI_REGISTRY/visualization/vtk-image-builder/vtk:v9.1.0
+image: $CI_REGISTRY/visualization/devops/vtk-image-builder/vtk-for-ci:v9.1.0
 stages:
   - build
   - test
 
-build-plugin:
+build-module:
   stage: build
   script:
     - mkdir -p build
@@ -20,16 +20,16 @@ build-plugin:
     paths:
       - build/
 
-
-test-plugin:
+test-module:
   stage: test
-  needs: ['build-plugin']
   script:
     - cd build
-    - ctest
+    - ctest -C Release -j 2 --output-on-failure || ctest -C Release -j 1 --rerun-failed -VV
   tags:
     - docker
     - linux
     - shared
   dependencies:
-    - build-plugin
+    - build-module
+  needs:
+    - build-module
