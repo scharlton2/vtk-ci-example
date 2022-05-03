@@ -10,15 +10,15 @@ This example is developed by [Kitware SAS][].
 
 [Kitware SAS]: https://www.kitware.eu
 
-Build and test with a ParaView image
+Build and test with a VTK image
 ====================================
-The provided `.gitlab-ci.yml` use ParaView v9.1.0 to build and test.
+The provided `.gitlab-ci.yml` use VTK v9.1.0 to build and test.
 To choose another version, just change the `image` tag in .gitlab-ci.yml to point to another image.
 Available images are visible on [vtk-for-ci][] dockerhub repository.
 
 Graphical testing is supported using a [Xvfb][] entry point.
 
-[paraview-for-ci]: https://hub.docker.com/r/kitware/vtk-for-ci
+[vtk-for-ci]: https://hub.docker.com/r/kitware/vtk-for-ci
 [Xvfb]: https://en.wikipedia.org/wiki/Xvfb
 
 License
@@ -29,4 +29,4 @@ See [License.txt][] for details. For additional licenses, refer to the
 [VTK License][].
 
 [License.txt]: License.txt
-[ParaView License]: https://vtk.org/about/#license
+[VTK License]: https://vtk.org/about/#license
