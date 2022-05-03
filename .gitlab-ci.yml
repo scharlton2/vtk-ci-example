@@ -13,7 +13,7 @@ build-module:
   tags:
     - docker
     - linux
-    - shared
+    - vtk
   artifacts:
     expire_in: 1h
     when: always
@@ -28,7 +28,7 @@ test-module:
   tags:
     - docker
     - linux
-    - shared
+    - vtk
   dependencies:
     - build-module
   needs:
