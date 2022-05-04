@@ -19,12 +19,15 @@ find_package(VTK
     CommonCore
     CommonDataModel
     CommonExecutionModel
-    FiltersCore
-    Python
-  OPTIONAL_COMPONENTS
     CommonSystem
+    FiltersCore
+    IOImage
     IOXML
-    TestingCore)
+    Python
+    RenderingCore
+    RenderingOpenGL2
+    TestingCore
+    TestingRendering)
 
 ## VTK Module
 
