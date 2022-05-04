@@ -9,6 +9,9 @@ DEPENDS
   VTK::FiltersCore
 TEST_DEPENDS
   VTK::CommonSystem
+  VTK::IOImage
   VTK::IOXML
+  VTK::RenderingCore
+  VTK::RenderingOpenGL2
   VTK::TestingCore
-
+  VTK::TestingRendering

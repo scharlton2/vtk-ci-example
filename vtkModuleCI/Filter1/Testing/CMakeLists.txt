@@ -16,9 +16,9 @@ if (TARGET VTK::vtkpython)
   endif ()
 endif ()
 
-vtk_add_test_cxx(vtkFilter1Test no_data_tests
+vtk_add_test_cxx(vtkFilter1Test tests
   NO_DATA NO_VALID NO_OUTPUT
   TestFilter1.cxx
   ${PROJECT_SOURCE_DIR}/Data
 )
-vtk_test_cxx_executable(vtkFilter1Test no_data_tests)
+vtk_test_cxx_executable(vtkFilter1Test tests)
