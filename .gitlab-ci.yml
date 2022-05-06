@@ -26,6 +26,7 @@ test-module:
     - Xvfb :99 -screen 0 1280x1024x24 &
     - cd build
     - export DISPLAY=:99
+    - export LD_LIBRARY_PATH=/vtk/install/lib/:$LD_LIBRARY_PATH
     - ctest -j 2 --output-on-failure || ctest -j 1 --rerun-failed -VV
   tags:
     - docker
