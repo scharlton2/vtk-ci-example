@@ -37,4 +37,6 @@ jobs:
 
     - name: Test
       working-directory: ${{github.workspace}}/build
-      run: xvfb-run ctest -j 2 --output-on-failure || xvfb-run ctest -j 1 --rerun-failed -VV
+      run: |
+         export LD_LIBRARY_PATH=/vtk/install/lib/:$LD_LIBRARY_PATH
+         xvfb-run ctest -j 2 --output-on-failure || xvfb-run ctest -j 1 --rerun-failed -VV
