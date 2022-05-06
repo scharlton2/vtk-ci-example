@@ -12,7 +12,7 @@ jobs:
     if: github.event.pull_request.draft == false
 
     runs-on: ubuntu-latest
-    container: kitware/paraview-for-ci:v5.10.1
+    container: kitware/vtk-for-ci:v9.1.0
 
     steps:
 
