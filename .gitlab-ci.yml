@@ -25,7 +25,7 @@ test-module:
   script:
     - cd build
     - export LD_LIBRARY_PATH=/vtk/install/lib/:$LD_LIBRARY_PATH
-    - xvfb-run ctest -j 2 --output-on-failure || ctest -j 1 --rerun-failed -VV
+    - xvfb-run ctest -j 2 --output-on-failure || xvfb-run ctest -j 1 --rerun-failed -VV
   tags:
     - docker
     - linux
