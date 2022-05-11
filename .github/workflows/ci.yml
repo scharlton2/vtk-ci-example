@@ -21,7 +21,7 @@ jobs:
       with:
         path: 'source'
         fetch-depth: 0
-        lfs: 'true'
+        lfs: 'false'
 
     - name: Setup Directories
       working-directory: ${{github.workspace}}
