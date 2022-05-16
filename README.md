@@ -1,9 +1,9 @@
 Introduction
 ============
-VTK CI Example is example on how to build and test a VTK based application or modules using CI.
-It contains only a very simple VTK module associated with a `.gitlab-ci.yml` and `.github/workflows/ci.yml` files.
+VTK CI Example is an example on how to build and test a VTK based application or modules using CI.
+It contains only a very simple VTK module associated with `.gitlab-ci.yml` and `.github/workflows/ci.yml` files.
 
-All is handled in the yml files, you can copy the onw you need in your own project
+Everything is handled in the yml files. You can copy the one you need in your own project,
 on any gitlab instance or on github to be able to build and test your VTK based modules or applications.
 
 This example is developed by [Kitware SAS][].
