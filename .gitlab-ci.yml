@@ -8,7 +8,7 @@ build-module:
   script:
     - mkdir -p build
     - cd build
-    - cmake -DVTK_DIR=/vtk/install/lib/cmake/vtk-9.1/ -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release ..
+    - cmake -DCMAKE_PREFIX_PATH=/opt/vtk/install/ -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release ..
     - cmake --build . --parallel 2
   tags:
     - docker
@@ -24,7 +24,7 @@ test-module:
   stage: test
   script:
     - cd build
-    - export LD_LIBRARY_PATH=/vtk/install/lib/:$LD_LIBRARY_PATH
+    - export LD_LIBRARY_PATH=/opt/vtk/install/lib/:$LD_LIBRARY_PATH
     - xvfb-run ctest -j 2 --output-on-failure || xvfb-run ctest -j 1 --rerun-failed -VV
   tags:
     - docker
