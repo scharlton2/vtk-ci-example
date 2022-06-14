@@ -3,7 +3,7 @@ stages:
   - build
   - test
 
-build-module:
+.build-module:
   stage: build
   script:
     - mkdir -p build
@@ -20,7 +20,7 @@ build-module:
     paths:
       - build/
 
-test-module:
+.test-module:
   stage: test
   script:
     - cd build
@@ -30,7 +30,45 @@ test-module:
     - docker
     - linux
     - vtk
+
+build-module-latest:
+  extends:
+    - .build-module
+  image: kitware/vtk-for-ci:latest
+
+test-module-latest:
+  extends:
+    - .test-module
+  image: kitware/vtk-for-ci:latest
   dependencies:
-    - build-module
+    - build-module-latest
   needs:
-    - build-module
+    - build-module-latest
+
+build-module-v9.1.0:
+  extends:
+    - .build-module
+  image: kitware/vtk-for-ci:v9.1.0
+
+test-module-v9.1.0:
+  extends:
+    - .test-module
+  image: kitware/vtk-for-ci:v9.1.0
+  dependencies:
+    - build-module-v9.1.0
+  needs:
+    - build-module-v9.1.0
+
+build-module-v9.0.3:
+  extends:
+    - .build-module
+  image: kitware/vtk-for-ci:v9.0.3
+
+test-module-v9.0.3:
+  extends:
+    - .test-module
+  image: kitware/vtk-for-ci:v9.0.3
+  dependencies:
+    - build-module-v9.0.3
+  needs:
+    - build-module-v9.0.3
