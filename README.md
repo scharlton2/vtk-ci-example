@@ -12,8 +12,8 @@ This example is developed by [Kitware SAS][].
 
 Build and test with a VTK image
 ====================================
-The provided yml files use VTK v9.1.0 to build and test.
-To choose another version, just change the `image` tag in your yml file to point to another image.
+The provided yml files use multiple VTK versions to build and test.
+To select the version, keep the steps using the right `image` tag.
 Available images are visible on [vtk-for-ci][] dockerhub repository.
 
 Graphical testing is supported using [xvfb-run][] and mesa.
@@ -32,3 +32,12 @@ See [License.txt][] for details. For additional licenses, refer to the
 
 [License.txt]: License.txt
 [VTK License]: https://vtk.org/about/#license
+
+Technicalities
+==============
+
+In the .github example, a CI matrix is used to build against different version of VTK.
+Feel free to modify the values in this matrix as you see fit.
+
+In the .gitlab example, jobs can be disabled using CI variables. eg: set `DISABLE_V903` to `True`.
+This can be practical when sharing this file among multiples repositories.
